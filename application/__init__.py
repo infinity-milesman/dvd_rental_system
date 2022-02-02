@@ -8,7 +8,7 @@ from config import app_config
 
 db = SQLAlchemy()
 r = FlaskRedis()
-migrate = Migrate()
+migrate = Migrate(compare_type=True)
 
 def init_app(config):
     app = Flask(__name__, instance_relative_config=False)
